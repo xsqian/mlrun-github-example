@@ -42,7 +42,7 @@ spec:
     schedule: '*/10 * * * *'
   artifacts: []
   conda: ''
-  source: git://github.com/xsqian/mlrun-github-example.git#main
+  source: git://github.com/xsqian/mlrun-github-example.git#branch-a
   origin_url: git://github.com/xsqian/mlrun-github-example.git#refs/heads/main
   load_source_on_run: true
   desired_state: online

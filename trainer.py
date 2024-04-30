@@ -20,4 +20,4 @@ def train(context,
     apply_mlrun(model=model, model_name=model_name, x_test=X_test, y_test=y_test)
 
     model.fit(X_train, y_train)
-    print("******************** running with main branch git://github.com/xsqian/mlrun-github-example.git#main ********************")
+    print("******************** running with branch-a branch git://github.com/xsqian/mlrun-github-example.git#branch-a ********************")
