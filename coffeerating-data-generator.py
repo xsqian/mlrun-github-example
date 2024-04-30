@@ -17,8 +17,8 @@ def coffeerating_data_generator(context):
             "balance",
         ]
     ])
-
+    print("******************** running with main branch git://github.com/xsqian/mlrun-github-example.git#main ********************")
     # mlrun expr 
     context.log_dataset("coffee_dataset", df=coffee, format='parquet', index=False, artifact_path=context.artifact_subpath('coffee-dataset'))
-    #context.log_artifact('coffee_dataset', body=raw, format='csv')
+    # context.log_artifact('coffee_dataset', body=raw, format='csv')
     return coffee, 'outcome'

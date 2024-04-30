@@ -1,7 +1,7 @@
 kind: project
 metadata:
-  name: schedule-workflow
-  created: '2023-09-15T18:54:11.992000'
+  name: github-example
+  created: '2024-04-30T22:01:03.539000'
 spec:
   functions:
   - url: my_job_code.py
@@ -13,13 +13,15 @@ spec:
   - url: coffeerating-data-generator.py
     name: coffeerating-data-function
     kind: job
-    image: mlrun/mlrun:1.4.1
+    image: mlrun/mlrun:1.6.1
     handler: coffeerating_data_generator
+    with_repo: true
   - url: trainer.py
     name: coffeerating-trainer
     kind: job
-    image: mlrun/mlrun:1.4.1
+    image: mlrun/mlrun:1.6.1
     handler: train
+    with_repo: true
   - url: src/func1.py
     name: function1
     kind: job
@@ -40,8 +42,8 @@ spec:
     schedule: '*/10 * * * *'
   artifacts: []
   conda: ''
-  source: git://gitlab.com/xsqian/mlrun-gitlab-example.git#main
-  origin_url: git://gitlab.com/xsqian/mlrun-gitlab-example.git#refs/heads/main
+  source: git://github.com/xsqian/mlrun-github-example.git#main
+  origin_url: git://github.com/xsqian/mlrun-github-example.git#refs/heads/main
   load_source_on_run: true
   desired_state: online
   owner: xingsheng
