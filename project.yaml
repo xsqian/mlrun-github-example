@@ -1,0 +1,53 @@
+kind: project
+metadata:
+  name: schedule-workflow
+  created: '2023-09-15T18:54:11.992000'
+spec:
+  functions:
+  - url: my_job_code.py
+    name: greetings
+    kind: job
+    image: mlrun/mlrun:1.4.1
+    handler: handler
+    with_repo: true
+  - url: coffeerating-data-generator.py
+    name: coffeerating-data-function
+    kind: job
+    image: mlrun/mlrun:1.4.1
+    handler: coffeerating_data_generator
+  - url: trainer.py
+    name: coffeerating-trainer
+    kind: job
+    image: mlrun/mlrun:1.4.1
+    handler: train
+  - url: src/func1.py
+    name: function1
+    kind: job
+    image: mlrun/mlrun:1.4.1
+    handler: handler
+    with_repo: true
+  workflows:
+  - path: workflow.py
+    name: main
+  - path: ./schedule-workflow.py
+    name: testing
+    schedule: '*/10 * * * *'
+  - path: ./schedule-workflow.py
+    name: testing-scheduled-workflow
+    schedule: '*/10 * * * *'
+  - path: src/schedule-workflow.py
+    name: testing-schedule
+    schedule: '*/10 * * * *'
+  artifacts: []
+  conda: ''
+  source: git://gitlab.com/xsqian/mlrun-gitlab-example.git#main
+  origin_url: git://gitlab.com/xsqian/mlrun-gitlab-example.git#refs/heads/main
+  load_source_on_run: true
+  desired_state: online
+  owner: xingsheng
+  build:
+    commands: []
+    requirements: []
+  custom_packagers: []
+status:
+  state: online
