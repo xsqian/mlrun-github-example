@@ -55,7 +55,6 @@ spec:
   origin_url: git://github.com/xsqian/mlrun-github-example.git#refs/heads/main
   load_source_on_run: true
   desired_state: online
-  owner: xingsheng
   build:
     commands: []
     requirements: []
