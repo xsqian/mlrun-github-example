@@ -13,6 +13,8 @@ import mlrun
 def test():
     project = mlrun.get_current_project()
     func = project.get_function("nodegroup-test")
+    func.with_requests(mem="16G", cpu=2)
+    func.with_limits(mem="32G", cpu=4)    
     run2 = mlrun.run_function(
         name="nodegroup-test-run-from-workflow",
         function=func,

@@ -1,7 +1,7 @@
 kind: project
 metadata:
   name: nodegroup-test
-  created: '2024-06-07T16:29:26.943000'
+  created: '2024-06-07T16:50:20.969000'
 spec:
   functions:
   - url: my_job_code.py
@@ -55,6 +55,7 @@ spec:
   origin_url: git://github.com/xsqian/mlrun-github-example.git#refs/heads/main
   load_source_on_run: true
   desired_state: online
+  owner: xingsheng
   build:
     commands: []
     requirements: []
