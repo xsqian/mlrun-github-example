@@ -1,0 +1,24 @@
+spec:
+  functions:
+  - url: src/func1.py
+    name: function1
+    kind: job
+    image: mlrun/mlrun
+    handler: handler
+    with_repo: true
+  workflows:
+  - path: src/schedule-workflow.py
+    name: testing-schedule
+    schedule: '*/10 * * * *'
+  source: git://github.com/xsqian/mlrun-github-example.git#main
+  owner: xingsheng
+  desired_state: online
+  conda: ''
+  origin_url: git://github.com/xsqian/mlrun-github-example.git#refs/heads/main
+  load_source_on_run: true
+kind: project
+metadata:
+  name: schedule-workflow
+  created: '2024-10-08T16:36:59.446000'
+status:
+  state: online
